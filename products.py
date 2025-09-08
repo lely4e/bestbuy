@@ -67,8 +67,8 @@ class Product:
 
 
 def main():
-    bose = products.Product("Bose QuietComfort Earbuds", price=250, quantity=500)
-    mac = products.Product("MacBook Air M2", price=1450, quantity=100)
+    bose = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
+    mac = Product("MacBook Air M2", price=1450, quantity=100)
     print(bose.__dict__)
     print(mac.__dict__)
 
