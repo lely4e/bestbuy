@@ -1,0 +1,22 @@
+# created by virtualenv automatically
+.venv/bin
+.idea/
+__pycache__
+
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyd
+*.pdb
+*.so
+
+# OS-specific files
+.DS_Store
+Thumbs.db
