@@ -1,5 +1,4 @@
 class Product:
-
     def __init__(self, name, price, quantity):
         """ Initialize a product """
         if not name:
@@ -22,6 +21,8 @@ class Product:
         """ Set the quantity of the product """
         if not isinstance(quantity, int):
             raise ValueError("Quantity must be a number")
+        if quantity < 0:
+            raise ValueError("Quantity cannot be negative")
         self.quantity = quantity
         if self.quantity <= 0:
             self.deactivate()
@@ -48,7 +49,7 @@ class Product:
         """ Buy a quantity of the product """
         # Check if there are enough quantity
         if quantity > self.quantity:
-            raise ValueError("There are not enough quantity")
+            raise ValueError("There is not enough quantity")
         if quantity <= 0:
             raise ValueError("Quantity must be a positive number")
 
