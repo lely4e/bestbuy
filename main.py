@@ -50,20 +50,29 @@ def make_order(store_object):
         if product_input == '' or amount == '':
             break
 
+        product = None
         try:
             product_input = int(product_input)
             amount = int(amount)
+            if product_input < 0:
+                raise IndexError
+            product = product_items[product_input - 1]
         except ValueError:
             print("Please enter a number.")
             continue
+        except IndexError:
+            print("No product with that number.")
+            continue
 
-        shopping_list.append((product_items[product_input - 1], amount))
+        shopping_list.append((product, amount))
         print("Product added to list!")
 
-    price = store_object.order(shopping_list)
-
-    print("*******")
-    print(f"Order made! Total payment is: ${price}")
+    try:
+        price = store_object.order(shopping_list)
+        print("\n*******")
+        print(f"Order made! Total payment is: ${price}")
+    except ValueError as e:
+        print(e)
 
 
 def options(store_object):

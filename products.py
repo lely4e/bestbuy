@@ -49,7 +49,7 @@ class Product:
         """ Buy a quantity of the product """
         # Check if there are enough quantity
         if quantity > self.quantity:
-            raise ValueError("There is not enough quantity")
+            raise ValueError("Error while making order! Quantity larger than what exists")
         if quantity <= 0:
             raise ValueError("Quantity must be a positive number")
 
