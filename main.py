@@ -71,8 +71,8 @@ def make_order(store_object):
         price = store_object.order(shopping_list)
         print("\n*******")
         print(f"Order made! Total payment is: ${price}")
-    except ValueError as e:
-        print(e)
+    except ValueError as value_error:
+        print(value_error)
 
 
 def options(store_object):
@@ -118,4 +118,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

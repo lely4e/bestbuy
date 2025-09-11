@@ -1,4 +1,5 @@
 class Product:
+    """ A class to represent a product, it's name, price, quantity and status """
     def __init__(self, name, price, quantity):
         """ Initialize a product """
         if not name:
@@ -65,4 +66,3 @@ class Product:
 
         # Returns the total price (float) of the purchase
         return total_price
-

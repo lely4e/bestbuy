@@ -1,7 +1,17 @@
 import products
 
 
+def order(shopping_list) -> float:
+    """ Order the product in the store """
+    # Gets a list of tuples: Product (Product class) and quantity (int)
+    total = 0
+    for product, quantity in shopping_list:
+        total += product.buy(quantity)
+    return total
+
+
 class Store:
+    """ A class to store products """
     def __init__(self, products_list):
         """ Initialize a product """
         self.products = products_list
@@ -24,13 +34,3 @@ class Store:
     def get_all_products(self) -> list[products.Product]:
         """ Return a list of all products in the store """
         return self.products
-
-    def order(self, shopping_list) -> float:
-        """ Order the product in the store """
-        # Gets a list of tuples, where each tuple has 2 items: Product (Product class) and quantity (int)
-        total = 0
-        for product, quantity in shopping_list:
-            total += product.buy(quantity)
-        return total
-
-
