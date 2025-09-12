@@ -1,7 +1,6 @@
 import sys
 import products
 import store
-from store import Store
 
 
 def display_menu():
@@ -69,7 +68,7 @@ def make_order(store_object):
         print("Product added to list!")
 
     try:
-        price = Store.order(shopping_list)
+        price = store.Store.order(shopping_list)
         print("\n*******")
         print(f"Order made! Total payment is: ${price}")
     except ValueError as value_error:
